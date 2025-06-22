@@ -3,67 +3,19 @@ package Methods;
 import java.util.Scanner;
 
 public class Q10 {
-
-    public static double add(double a, double b) {
-        return a + b;
-    }
-
-    public static double subtract(double a, double b) {
-        return a - b;
-    }
-
-    public static double multiply(double a, double b) {
-        return a * b;
-    }
-
-    public static double divide(double a, double b) {
-        if (b == 0) {
-            System.out.println("Error: Cannot divide by zero.");
-            return Double.NaN;
-        }
-        return a / b;
-    }
-
-    public static void calculator() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Choose operation:");
-        System.out.println("1. Addition (+)");
-        System.out.println("2. Subtraction (-)");
-        System.out.println("3. Multiplication (*)");
-        System.out.println("4. Division (/)");
-
-        int choice = sc.nextInt();
-
-        System.out.print("Enter first number: ");
-        double num1 = sc.nextDouble();
-        System.out.print("Enter second number: ");
-        double num2 = sc.nextDouble();
-
-        double result = 0;
-
-        switch (choice) {
-            case 1:
-                result = add(num1, num2);
-                break;
-            case 2:
-                result = subtract(num1, num2);
-                break;
-            case 3:
-                result = multiply(num1, num2);
-                break;
-            case 4:
-                result = divide(num1, num2);
-                break;
-            default:
-                System.out.println("Invalid choice.");
-                return;
-        }
-
-        System.out.println("Result: " + result);
+    public static int[] findRemainderAndQuotient(int number, int divisor) {
+        int quotient = number / divisor;
+        int remainder = number % divisor;
+        return new int[] {quotient, remainder};
     }
 
     public static void main(String[] args) {
-        calculator();
+        Scanner sc = new Scanner(System.in);
+        int chocolates = sc.nextInt();
+        int children = sc.nextInt();
+        int[] result = findRemainderAndQuotient(chocolates, children);
+        System.out.println("Each child gets: " + result[0]);
+        System.out.println("Remaining chocolates: " + result[1]);
     }
 }
 

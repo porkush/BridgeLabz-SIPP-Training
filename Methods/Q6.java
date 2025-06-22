@@ -1,36 +1,27 @@
-
 package Methods;
+
 import java.util.Scanner;
 
-
 public class Q6 {
+    public double[] calculateTrignometricFunctions(double angle){
+        double radians= Math.toRadians(angle);
+        double sine= Math.sin(radians);
+        double cosine= Math.cos(radians);
+        double tan = Math.tan(radians);
+        return new double[] {radians,sine,cosine,tan};
+    } 
 
-          public static int input(){
-            Scanner sc= new Scanner(System.in);
-            System.out.println("enter your number for factorial");
-            int str = sc.nextInt();
-            return str;
-        }
-    
-        public static long factorial(int n){
-            if(n==0||n==1){
-                return 1;
-            }
-            else{
-                return n*factorial(n-1);
-            }
-        }
-        public static void displayOutput() {
-            int num= input();
-            long result= factorial(num);
-            System.out.println("Factorial of " + num + " is: " + result);
-        }
-    
-        public static void main (String []args){
-            displayOutput();
-        }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        double angle= sc.nextDouble();
+        Q6 obj= new Q6();
+        double arr[]= obj.calculateTrignometricFunctions(angle);
+        double radians= arr[0];
+        double sine= arr[1];
+        double cosine= arr[2];
+        double tan = arr[3];
+        System.out.println("radians" + radians  + "\n sine" + sine + "\n cosine" + cosine + "\n tan" + tan);
+
     }
     
-
-
-
+}

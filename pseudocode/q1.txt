@@ -1,0 +1,11 @@
+○ Design classes for Pet, Dog, Cat, and Bird. Use inheritance and constructors
+to initialize them.
+
+class Pet
+    attribute name
+    attribute age
+
+    constructor Pet(petName, petAge):
+        name = petName
+        age = petAge
+

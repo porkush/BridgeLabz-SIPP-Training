@@ -3,31 +3,21 @@ package Methods;
 import java.util.Scanner;
 
 public class Q5 {
+    public static int [] findQuotientReminder(int n, int q){
+        int quotient= n/q;
+        int remainder= n%q;
+        return new int []  {quotient, remainder};
+    }
 
-    public static String input(){
-        Scanner sc= new Scanner(System.in);
-        System.out.println("enter your word,phrase or sentence");
-        String str = sc.nextLine();
-        return str;
-    }
-    public static void checkPalindrome(){
-        String str= input();
-        if(str.length()<=1){
-            System.out.println("palindrome");
-            return;
-        }
-        int end= str.length()-1;
-        for(int i=0;i<=end;i++){
-            if(str.charAt(i)!=str.charAt(end)){
-                System.out.println("not palindrome");
-                return;
-            }
-            end--;
-        }
-        System.out.println("palindrome");
-    }
     public static void main(String[] args) {
-        checkPalindrome();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter number and divisor");
+        int n= sc.nextInt();
+        int q= sc.nextInt();
+        int arr[]= findQuotientReminder(n, q);
+        int remainder= arr[1];
+        int quotient= arr[0];
+        System.out.print("Remainder" + arr[1] + " \n quotient" + arr[0] );
     }
     
 }

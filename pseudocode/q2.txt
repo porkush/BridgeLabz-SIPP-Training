@@ -1,0 +1,4 @@
+class library
+    attribute name;
+    attribute id;
+    attribute membershipdate;
